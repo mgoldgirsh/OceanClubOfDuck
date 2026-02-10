@@ -179,40 +179,30 @@ header {
     margin-bottom: 18px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 900px) {
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-
-    .about {
-        padding: 80px 6%;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-    }
-}
 /* Rooms Section */
 .rooms {
-    padding: 80px 6%;
+    padding: 60px 5%;
     background: #ffffff;
 }
 
 .rooms h2 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     margin-bottom: 40px;
     text-align: center;
     font-family: 'Playfair Display', serif;
 }
 
 .rooms-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;       /* allows wrapping */
+    justify-content: center;
     gap: 30px;
 }
 
+/* Each room card */
 .room-card {
+    flex: 1 1 280px;       /* grows/shrinks, min width 280px */
+    max-width: 320px;      /* keeps all cards uniform */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -225,9 +215,10 @@ header {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* Room image */
 .room-img {
     width: 100%;
-    height: 200px; /* fixed height for all images */
+    height: 200px;
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -253,22 +244,42 @@ header {
     line-height: 1.6;
 }
 
-/* Mobile Responsive */
-@media (max-width: 900px) {
+/* Mobile adjustments */
+@media (max-width: 700px) {
     .rooms-container {
-        grid-template-columns: 1fr; /* stack one column */
+        flex-direction: column;   /* stack cards vertically */
+        gap: 25px;
+    }
+
+    .room-card {
+        max-width: 100%;          /* full width on phone */
     }
 
     .room-img {
-        height: 180px; /* slightly smaller on mobile */
+        height: 180px;
     }
 
     .rooms h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .room-card p {
         font-size: 0.9rem;
-        padding: 0 5px; /* give small side padding for readability */
+        padding: 0 5px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        padding: 80px 6%;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
     }
 }
