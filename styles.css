@@ -193,15 +193,15 @@ header {
         font-size: 2rem;
     }
 }
-
+/* Rooms Section */
 .rooms {
-    padding: 100px 8%;
+    padding: 80px 6%;
     background: #ffffff;
 }
 
 .rooms h2 {
-    font-size: 2.8rem;
-    margin-bottom: 50px;
+    font-size: 2.4rem;
+    margin-bottom: 40px;
     text-align: center;
     font-family: 'Playfair Display', serif;
 }
@@ -209,7 +209,7 @@ header {
 .rooms-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .room-card {
@@ -225,10 +225,9 @@ header {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* Fixed consistent image size for all room cards */
 .room-img {
     width: 100%;
-    height: 200px; /* fixed height */
+    height: 200px; /* fixed height for all images */
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -237,7 +236,7 @@ header {
 .room-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* fills the box without stretching */
+    object-fit: cover;
 }
 
 .room-card h3 {
@@ -257,10 +256,19 @@ header {
 /* Mobile Responsive */
 @media (max-width: 900px) {
     .rooms-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* stack one column */
     }
 
     .room-img {
-        height: 180px;
+        height: 180px; /* slightly smaller on mobile */
+    }
+
+    .rooms h2 {
+        font-size: 2rem;
+    }
+
+    .room-card p {
+        font-size: 0.9rem;
+        padding: 0 5px; /* give small side padding for readability */
     }
 }
